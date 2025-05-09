@@ -354,10 +354,11 @@ def driver1():
                             cur.execute("SELECT * FROM atenttb where WorkerName='" + uname + "'")
                             data = cur.fetchall()
 
-                            #import winsound
-                            #filename = 'alert.wav'
-                            #winsound.PlaySound(filename, winsound.SND_FILENAME)
-                            sendmail('javaprojectfantasy@gmail.com','Helmet Alert,no')
+                            import winsound
+                            filename = 'alert.wav'
+                            winsound.PlaySound(filename, winsound.SND_FILENAME)
+                            sendmail('ssurya3527@gmail.com',uname+'- is Not Wearing Helmet')
+                            sendmail('kuberank072003@gmail.com', uname + '- is Not Wearing Helmet')
                             annotated_frame = results[0].plot()
 
                             cv2.imwrite("alert.jpg", annotated_frame)
